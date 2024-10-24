@@ -1,0 +1,31 @@
+﻿@model Lab4.ViewModels.HomeViewModel
+@{
+    ViewData["Title"] = "Данные";
+}
+
+<table border="0" cellspacing="100">
+    <tr>
+        <td><
+            <table border="1">
+                <caption>Reviews</caption>
+                <tr>
+                    <th>Код пользователя</th>
+                    <th>Логин пользователя</th>
+                    <th>Описание места</th>
+                    <th>Текст отзыва</th>
+                    <th>Оценка</th>
+                </tr>
+                @foreach (var mod in Model.UserReviews)
+                {
+                    <tr>
+                        <td>@mod.UserId</td>
+                        <td>@mod.UserLogin</td>
+                        <td>@mod.PlaceDescription</td>
+                        <td>@mod.ReviewText</td>
+                        <td>@mod.Grade</td>
+                    </tr>
+                }
+            </table>
+        </td>
+    </tr>
+</table>
